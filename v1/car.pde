@@ -12,7 +12,7 @@ class Car {
   int time;
   int lapTime;
   int bestTime;
-  color col = color(0, 255, 255);
+  color col = color(255, 0, 0);  // (0,255,255)
   boolean alive = true;
   boolean onFinishLine = true;
   boolean preFinLine = false;
