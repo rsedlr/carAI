@@ -47,11 +47,9 @@ class Population {
     }
     bestCar = cars[bestCarNo[0]].clone();
     if (saveBest) {
-      //saveGen(cars.length);
       saveGen(cars.length/3);
+      //saveGen(3);  // saves best 3 cars
       //bestCar.saveCar(bestCarNo[0], pop.gen); 
-      //cars[bestCarNo[1]].saveCar(bestCarNo[1], pop.gen);
-      //cars[bestCarNo[2]].saveCar(bestCarNo[2], pop.gen);
       saveBest = false;
     }
     //println(bestCarNo);
@@ -63,24 +61,15 @@ class Population {
     }
   }
   
-  //boolean done() {  // old way of doing it, more efficient but doesnt give alive count
-  //  for (int i=0; i < cars.length; i++) {
-  //    if (cars[i].alive) {
-  //      return false; 
-  //    }
-  //  }
-  //  return true;
-  //}
-  
   boolean done() {  // returns true if all players are dead
     alive = 0;
     for (int i=0; i < cars.length; i++) {
       if (cars[i].alive) {
-        alive += 1; 
+        alive += 1;  // return false
       }
     }
     if (alive > 0) return false;
-    else return true;
+    return true;
   }
   
   void naturalSelection() {
@@ -116,7 +105,6 @@ class Population {
     int fitnessSum = 0;  // long
     for (int i=0; i < cars.length; i++) {
       fitnessSum += cars[i].fitness;
-      //if (cars[i].fitness > bestFitness) bestFitness = cars[i].fitness;
     }
     
     int rand = floor(random(fitnessSum));
