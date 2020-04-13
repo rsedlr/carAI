@@ -1,21 +1,29 @@
 
 class Track {
-  PVector[] outerPoints = new PVector[34];
-  PVector[] innerPoints = new PVector[34];
-  PVector[] preFinLine;
-  PVector[] finishLine;
-  PVector start = new PVector(830, 107);
-  float startAngle = -PI/2;
+  PVector[] outerPoints;
+  PVector[] innerPoints;
+  PVector[] preFinLine = new PVector[2];
+  PVector[] finishLine = new PVector[2];
+  PVector start;
+  float startAngle = 0;
   int pointLen;
-
     
   Track(String type) {   
-    setPoints(type, innerPoints, outerPoints, start, finishLine, preFinLine, startAngle);
-
-    //PVector[][] temp = setPoints(type, innerPoints, outerPoints);
-    //innerPoints = temp[0];
-    //outerPoints = temp[1];
-    //setPoints(type, innerPoints, outerPoints, start, finishLine, preFinLine, startAngle);
+    if (type == "" || type == "default") {
+      outerPoints = new PVector[34];
+      innerPoints = new PVector[34];
+      setPoints(type, innerPoints, outerPoints, finishLine, preFinLine);  // start, startAngle
+      start = new PVector(830, 107);
+      startAngle = -PI/2;
+    } else if (type == "brands") {
+      outerPoints = new PVector[34];
+      innerPoints = new PVector[34];
+      setPoints(type, innerPoints, outerPoints, finishLine, preFinLine);  // start, startAngle
+      start = new PVector(830, 107);
+      startAngle = 0;
+    }
+    
+    pointLen = outerPoints.length;
   }
   
   public void draw() {    
@@ -23,14 +31,14 @@ class Track {
     fill(50);    
     strokeWeight(5);    
     beginShape();
-      for (int i=0; i < outerPoints.length; i++) {
+      for (int i=0; i < pointLen; i++) {
         vertex(outerPoints[i].x, outerPoints[i].y);
       }
     endShape(CLOSE);  // CLOSE 
     
     fill(0,130,0);
     beginShape();
-      for (int i=0; i < innerPoints.length; i++) {
+      for (int i=0; i < pointLen; i++) {
         vertex(innerPoints[i].x, innerPoints[i].y);
       }
     endShape(CLOSE);  // CLOSE
