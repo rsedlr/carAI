@@ -35,6 +35,8 @@ void draw() {
   if (!paused) {
     background(0, 130, 0);
     track.draw();
+    stroke(255);
+    strokeWeight(2);
     line(0, 63, 1200, 63);
     //if (humanPlaying) {
     //  if (humanCar.alive) {
@@ -101,9 +103,9 @@ void keyReleased() {
 
 
 
-int i = 16;
+int i = 0;
 void mousePressed() {
-  println("innerPoints[" + i + "] = new PVector(" + mouseX + ", " + mouseY + ");");
+  println("outerPoints[" + i + "] = new PVector(" + mouseX + ", " + mouseY + ");");
   i++;
 }
 
