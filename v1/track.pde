@@ -102,23 +102,23 @@ class Track {
     line(finishLine[0].x, finishLine[0].y, finishLine[1].x, finishLine[1].y);
     //line(preFinLine[0].x, preFinLine[0].y, preFinLine[1].x, preFinLine[1].y);
     
-    stroke(0,0,255);  // checkpoints
-    for (int i=0; i < innerPoints.length; i++) {  
-      line(innerPoints[i].x, innerPoints[i].y, outerPoints[i].x, outerPoints[i].y); 
-    }
-    textSize(15);
-    fill(255);
-    stroke(255,0,0);
-    strokeWeight(10);
-    for (int i=0; i < outerPoints.length; i++) {
-      point(outerPoints[i].x, outerPoints[i].y);
-      text(i, outerPoints[i].x, outerPoints[i].y); 
-    }
-    stroke(0,255,0);
-    for (int i=0; i < innerPoints.length; i++) {
-      point(innerPoints[i].x, innerPoints[i].y);
-      text(i, innerPoints[i].x, innerPoints[i].y); 
-    }
+    //stroke(0,0,255);  // checkpoints
+    //for (int i=0; i < innerPoints.length; i++) {  
+    //  line(innerPoints[i].x, innerPoints[i].y, outerPoints[i].x, outerPoints[i].y); 
+    //}
+    //textSize(15);
+    //fill(255);
+    //stroke(255,0,0);
+    //strokeWeight(10);
+    //for (int i=0; i < outerPoints.length; i++) {
+    //  point(outerPoints[i].x, outerPoints[i].y);
+    //  text(i, outerPoints[i].x, outerPoints[i].y); 
+    //}
+    //stroke(0,255,0);
+    //for (int i=0; i < innerPoints.length; i++) {
+    //  point(innerPoints[i].x, innerPoints[i].y);
+    //  text(i, innerPoints[i].x, innerPoints[i].y); 
+    //}
     
   } 
   
@@ -173,15 +173,13 @@ class Track {
       for (int i=0; i < pointLen; i++) {
         int s = i+1;
         if (s == pointLen) s = 0;
-          // testing stuff start
-        //stroke(255); 
+        //stroke(255);  // testing stuff
         //strokeWeight(1);
         //line(car.x, car.y, car.x+car.sensors[j].x, car.y+car.sensors[j].y);
         //fill(255, 0, 0);
         //text(j, car.x+car.sensors[j].x, car.y+car.sensors[j].y);
         //strokeWeight(10);
         //stroke(255,0,0);
-          // testing stuff end
         dist1 = lineDistance(car.x, car.y, car.x+car.sensors[j].x, car.y+car.sensors[j].y, outerPoints[i].x, outerPoints[i].y, outerPoints[s].x, outerPoints[s].y);
         dist2 = lineDistance(car.x, car.y, car.x+car.sensors[j].x, car.y+car.sensors[j].y, innerPoints[i].x, innerPoints[i].y, innerPoints[s].x, innerPoints[s].y);
         

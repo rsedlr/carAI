@@ -10,7 +10,7 @@ Population pop;
 Car humanCar;
 HUD hud = new HUD();
 float globalMutationRate = 0.15;  // 0.1
-boolean humanPlaying = true;
+boolean humanPlaying = false;
 boolean showBest = false;
 boolean saveBest = false;
 boolean runBest = false;
@@ -60,7 +60,6 @@ void draw() {
         pop.bestCar = pop.bestCar.clone();
       }
     } else {  // if just evolving normally
-      alive = 0;
       if (!pop.done()) {  //if any players are alive then update them
         //println("***********************************");
         hud.draw("Gen: "+str(pop.gen), "Alive: "+str(alive), "Best Lap: "+str(bestCarLap),  "Prev Fitness: "+str(bestFitness));

@@ -206,6 +206,7 @@ class Car {
   void saveCar(int carNo, int gen) {  //save the players top score and its population id 
     saveTable(brain.NetToTable(), "data/car" + carNo + "-gen"+ gen + "-fit" + bestFitness + ".csv");  // normal fitness wasnt working
   }
+  
   Car loadCar(int carNo) {
     Car load = new Car();
     Table t = loadTable("data/player" + carNo + ".csv");

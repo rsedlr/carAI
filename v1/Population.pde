@@ -47,10 +47,20 @@ class Population {
     }
     bestCar = cars[bestCarNo[0]].clone();
     if (saveBest) {
-      bestCar.saveCar(bestCarNo[0], pop.gen); 
+      //saveGen(cars.length);
+      saveGen(cars.length/3);
+      //bestCar.saveCar(bestCarNo[0], pop.gen); 
+      //cars[bestCarNo[1]].saveCar(bestCarNo[1], pop.gen);
+      //cars[bestCarNo[2]].saveCar(bestCarNo[2], pop.gen);
       saveBest = false;
     }
     //println(bestCarNo);
+  }
+  
+  void saveGen(float limit) {
+    for (int i=0; i < limit; i++) {
+      saveTable(cars[i].brain.NetToTable(), "data/gen" + gen + "-fit" + bestFitness + "/car-" + i + ".csv");
+    }
   }
   
   //boolean done() {  // old way of doing it, more efficient but doesnt give alive count
@@ -63,6 +73,7 @@ class Population {
   //}
   
   boolean done() {  // returns true if all players are dead
+    alive = 0;
     for (int i=0; i < cars.length; i++) {
       if (cars[i].alive) {
         alive += 1; 
@@ -90,7 +101,7 @@ class Population {
     newCars[8].mutate();
     
     for (int i=9; i < cars.length; i++) {
-      if (i < cars.length/3) {  // len/2
+      if (i < cars.length/3) {  // length/2
         newCars[i] = selectCar().clone();
       } else {
         newCars[i] = selectCar().crossover(selectCar());

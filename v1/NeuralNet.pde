@@ -58,7 +58,6 @@ class NeuralNet {
   
   Table NetToTable() {
     Table t = new Table();
-    
     float[] weightInArr = weightIn.toArray();
     float[] weightHidArr = weightHid.toArray();
     float[] weightOutArr = weightOut.toArray();
@@ -79,7 +78,6 @@ class NeuralNet {
     for (int i=0; i < weightOutArr.length; i++) {
       tr.setFloat(i, weightOutArr[i]); 
     }
-    
     return t;
   }
   
