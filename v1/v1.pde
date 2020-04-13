@@ -5,7 +5,7 @@
 
 
 boolean[] heldKeys = {false, false, false, false};  // up, down, left, right
-Track track = new Track("");
+Track track = new Track("new");
 Population pop;
 Car humanCar;
 HUD hud = new HUD();
@@ -35,40 +35,40 @@ void draw() {
   if (!paused) {
     background(0, 130, 0);
     track.draw();
-    
-    if (humanPlaying) {
-      if (humanCar.alive) {
-        hud.draw(humanCar.lap,humanCar.time, humanCar.lapTime, humanCar.bestTime);
-        if (heldKeys[0]) humanCar.accelerate(); 
-        if (heldKeys[1]) humanCar.brake();
-        if (heldKeys[2]) humanCar.turnLeft();
-        if (heldKeys[3]) humanCar.turnRight();
-        track.carSensors(humanCar);
-        humanCar.move();
-        humanCar.draw();
-      } else {
-        humanCar = new Car();
-      }
-    } else if (runBest) {
-      if (pop.bestCar.alive) {  //if best player is alive
-        pop.bestCar.look();
-        pop.bestCar.think();     
-        pop.bestCar.move();
-        pop.bestCar.draw();  
-      } else {  // once best player is dead
-        runBest = false;
-        pop.bestCar = pop.bestCar.clone();
-      }
-    } else {  // if just evolving normally
-      if (!pop.done()) {  //if any players are alive then update them
-        //println("***********************************");
-        hud.draw("Gen: "+str(pop.gen), "Alive: "+str(alive), "Best Lap: "+str(bestCarLap),  "Prev Fitness: "+str(bestFitness));
-        pop.updateAlive();
-      } else {  //all dead, do genetic algorithm shit
-        pop.calculateFitness(); 
-        pop.naturalSelection();
-      }
-    }
+    line(0, 63, 1200, 63);
+    //if (humanPlaying) {
+    //  if (humanCar.alive) {
+    //    hud.draw(humanCar.lap,humanCar.time, humanCar.lapTime, humanCar.bestTime);
+    //    if (heldKeys[0]) humanCar.accelerate(); 
+    //    if (heldKeys[1]) humanCar.brake();
+    //    if (heldKeys[2]) humanCar.turnLeft();
+    //    if (heldKeys[3]) humanCar.turnRight();
+    //    track.carSensors(humanCar);
+    //    humanCar.move();
+    //    humanCar.draw();
+    //  } else {
+    //    humanCar = new Car();
+    //  }
+    //} else if (runBest) {
+    //  if (pop.bestCar.alive) {  //if best player is alive
+    //    pop.bestCar.look();
+    //    pop.bestCar.think();     
+    //    pop.bestCar.move();
+    //    pop.bestCar.draw();  
+    //  } else {  // once best player is dead
+    //    runBest = false;
+    //    pop.bestCar = pop.bestCar.clone();
+    //  }
+    //} else {  // if just evolving normally
+    //  if (!pop.done()) {  //if any players are alive then update them
+    //    //println("***********************************");
+    //    hud.draw("Gen: "+str(pop.gen), "Alive: "+str(alive), "Best Lap: "+str(bestCarLap),  "Prev Fitness: "+str(bestFitness));
+    //    pop.updateAlive();
+    //  } else {  //all dead, do genetic algorithm shit
+    //    pop.calculateFitness(); 
+    //    pop.naturalSelection();
+    //  }
+    //}
   }
 }
 
@@ -101,11 +101,11 @@ void keyReleased() {
 
 
 
-//int i = 0;
-//void mousePressed() {
-//  println("innerPoints[" + i + "] = new PVector(" + mouseX + ", " + mouseY + ");");
-//  i++;
-//}
+int i = 16;
+void mousePressed() {
+  println("innerPoints[" + i + "] = new PVector(" + mouseX + ", " + mouseY + ");");
+  i++;
+}
 
 
 //void debugTrackPos() {
