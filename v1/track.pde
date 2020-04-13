@@ -1,7 +1,8 @@
 
 class Track {
-  PVector[] outerPoints = new PVector[29];
-  PVector[] innerPoints = new PVector[29];
+  PVector[] outerPoints = new PVector[34];
+  PVector[] innerPoints = new PVector[34];
+  int pointLen = outerPoints.length;
   PVector[] preFinLine = {new PVector(720, 680), new PVector(720, 770)};
   PVector[] finishLine = {new PVector(800, 63), new PVector(800, 151)};
   PVector start = new PVector(830, 107);
@@ -12,71 +13,71 @@ class Track {
     outerPoints[1] = new PVector(235, 770);
     outerPoints[2] = new PVector(110, 722);
     outerPoints[3] = new PVector(35, 596);
-    //outerPoints[5] = new PVector(35, 285);
-    outerPoints[4] = new PVector(35, 151);
-    outerPoints[5] = new PVector(110, 63);
-    outerPoints[6] = new PVector(206, 63);
-    outerPoints[7] = new PVector(281, 151);
-    outerPoints[8] = new PVector(281, 220);
-    outerPoints[9] = new PVector(281, 410);  
-    outerPoints[10] = new PVector(315, 479);
-    outerPoints[11] = new PVector(380, 510);
-    outerPoints[12] = new PVector(420, 510);
-    //outerPoints[15] = new PVector(648, 510);
-    outerPoints[13] = new PVector(781, 510);
-    outerPoints[14] = new PVector(844, 485);
-    outerPoints[15] = new PVector(868, 427);
-    outerPoints[16] = new PVector(844, 369);
-    outerPoints[17] = new PVector(781, 354);
-    outerPoints[18] = new PVector(550, 430);
-    outerPoints[19] = new PVector(425, 392);
-    outerPoints[20] = new PVector(357, 237);
-    outerPoints[21] = new PVector(426, 112);
-    outerPoints[22] = new PVector(596, 63);
-    //outerPoints[26] = new PVector(809, 63);
-    outerPoints[23] = new PVector(1021, 63);
-    outerPoints[24] = new PVector(1125, 114);
-    outerPoints[25] = new PVector(1165, 200);
-    //outerPoints[30] = new PVector(1165, 415);
-    outerPoints[26] = new PVector(1165, 630);
-    outerPoints[27] = new PVector(1088, 732);
-    outerPoints[28] = new PVector(941, 770);
-    //outerPoints[34] = new PVector(717, 770);
+    outerPoints[4] = new PVector(35, 430);  //
+    outerPoints[5] = new PVector(35, 250);  // 
+    outerPoints[6] = new PVector(35, 151);
+    outerPoints[7] = new PVector(110, 63);
+    outerPoints[8] = new PVector(206, 63);
+    outerPoints[9] = new PVector(281, 151);
+    outerPoints[10] = new PVector(281, 300);
+    outerPoints[11] = new PVector(281, 410);  
+    outerPoints[12] = new PVector(315, 479);
+    outerPoints[13] = new PVector(380, 510);
+    outerPoints[14] = new PVector(520, 510);
+    outerPoints[15] = new PVector(710, 510);  //
+    outerPoints[16] = new PVector(781, 510);
+    outerPoints[17] = new PVector(844, 485);
+    outerPoints[18] = new PVector(868, 427);
+    outerPoints[19] = new PVector(844, 369);
+    outerPoints[20] = new PVector(781, 354);
+    outerPoints[21] = new PVector(550, 430);
+    outerPoints[22] = new PVector(425, 392);
+    outerPoints[23] = new PVector(357, 237);
+    outerPoints[24] = new PVector(426, 112);
+    outerPoints[25] = new PVector(596, 63);
+    outerPoints[26] = new PVector(1021, 63);
+    outerPoints[27] = new PVector(1125, 114);
+    outerPoints[28] = new PVector(1165, 200);
+    outerPoints[29] = new PVector(1165, 415);  //
+    outerPoints[30] = new PVector(1165, 630);
+    outerPoints[31] = new PVector(1088, 732);
+    outerPoints[32] = new PVector(941, 770);
+    outerPoints[33] = new PVector(717, 770);  //
     
     innerPoints[0] = new PVector(493, 680);
     innerPoints[1] = new PVector(269, 680);
     innerPoints[2] = new PVector(189, 645);
     innerPoints[3] = new PVector(125, 564);
-    //innerPoints[5] = new PVector(125, 285);
-    innerPoints[4] = new PVector(125, 190);
-    innerPoints[5] = new PVector(148, 163);
-    innerPoints[6] = new PVector(168, 163);
-    innerPoints[7] = new PVector(191, 190);
-    innerPoints[8] = new PVector(191, 220); 
-    innerPoints[9] = new PVector(191, 473); 
-    innerPoints[10] = new PVector(234, 560);
-    innerPoints[11] = new PVector(311, 600);
-    innerPoints[12] = new PVector(420, 600);
-    //innerPoints[15] = new PVector(648, 600);
-    innerPoints[13] = new PVector(847, 600);
-    innerPoints[14] = new PVector(956, 513);
-    innerPoints[15] = new PVector(981, 372);
-    innerPoints[16] = new PVector(902, 261);
-    innerPoints[17] = new PVector(764, 244);
-    innerPoints[18] = new PVector(574, 316);
-    innerPoints[19] = new PVector(510, 309);
-    innerPoints[20] = new PVector(476, 239);
-    innerPoints[21] = new PVector(523, 177);
-    innerPoints[22] = new PVector(630, 151);
-    //innerPoints[26] = new PVector(809, 151);
-    innerPoints[23] = new PVector(965, 151);
-    innerPoints[24] = new PVector(1038, 195);
-    innerPoints[25] = new PVector(1075, 255);
-    //innerPoints[30] = new PVector(1075, 415);
-    innerPoints[26] = new PVector(1075, 575);
-    innerPoints[27] = new PVector(1028, 641);
-    innerPoints[28] = new PVector(941, 680);
-    //innerPoints[34] = new PVector(717, 680);
+    innerPoints[4] = new PVector(125, 430);  //
+    innerPoints[5] = new PVector(125, 250);  //
+    innerPoints[6] = new PVector(125, 190);
+    innerPoints[7] = new PVector(148, 163);
+    innerPoints[8] = new PVector(168, 163);
+    innerPoints[9] = new PVector(191, 190);
+    innerPoints[10] = new PVector(191, 300); 
+    innerPoints[11] = new PVector(191, 473); 
+    innerPoints[12] = new PVector(234, 560);
+    innerPoints[13] = new PVector(311, 600);
+    innerPoints[14] = new PVector(520, 600);
+    innerPoints[15] = new PVector(710, 600);  //
+    innerPoints[16] = new PVector(847, 600);
+    innerPoints[17] = new PVector(956, 513);
+    innerPoints[18] = new PVector(981, 372);
+    innerPoints[19] = new PVector(902, 261);
+    innerPoints[20] = new PVector(764, 244);
+    innerPoints[21] = new PVector(574, 316);
+    innerPoints[22] = new PVector(510, 309);
+    innerPoints[23] = new PVector(476, 239);
+    innerPoints[24] = new PVector(523, 177);
+    innerPoints[25] = new PVector(630, 151);
+    innerPoints[26] = new PVector(965, 151);
+    innerPoints[27] = new PVector(1038, 195);
+    innerPoints[28] = new PVector(1075, 255);
+    innerPoints[29] = new PVector(1075, 415);  //
+    innerPoints[30] = new PVector(1075, 575);
+    innerPoints[31] = new PVector(1028, 641);
+    innerPoints[32] = new PVector(941, 680);
+    innerPoints[33] = new PVector(717, 680);  //
         
   }
   
@@ -101,24 +102,23 @@ class Track {
     line(finishLine[0].x, finishLine[0].y, finishLine[1].x, finishLine[1].y);
     //line(preFinLine[0].x, preFinLine[0].y, preFinLine[1].x, preFinLine[1].y);
     
-    //stroke(0,0,255);  // checkpoints
-    //for (int i=0; i < innerPoints.length; i++) {  
-    //  line(innerPoints[i].x, innerPoints[i].y, outerPoints[i].x, outerPoints[i].y); 
-    //}
-    
-    //textSize(15);
-    //fill(255);
-    //stroke(255,0,0);
-    //strokeWeight(10);
-    //for (int i=0; i < outerPoints.length; i++) {
-    //  point(outerPoints[i].x, outerPoints[i].y);
-    //  text(i, outerPoints[i].x, outerPoints[i].y); 
-    //}
-    //stroke(0,255,0);
-    //for (int i=0; i < innerPoints.length; i++) {
-    //  point(innerPoints[i].x, innerPoints[i].y);
-    //  text(i, innerPoints[i].x, innerPoints[i].y); 
-    //}
+    stroke(0,0,255);  // checkpoints
+    for (int i=0; i < innerPoints.length; i++) {  
+      line(innerPoints[i].x, innerPoints[i].y, outerPoints[i].x, outerPoints[i].y); 
+    }
+    textSize(15);
+    fill(255);
+    stroke(255,0,0);
+    strokeWeight(10);
+    for (int i=0; i < outerPoints.length; i++) {
+      point(outerPoints[i].x, outerPoints[i].y);
+      text(i, outerPoints[i].x, outerPoints[i].y); 
+    }
+    stroke(0,255,0);
+    for (int i=0; i < innerPoints.length; i++) {
+      point(innerPoints[i].x, innerPoints[i].y);
+      text(i, innerPoints[i].x, innerPoints[i].y); 
+    }
     
   } 
   
@@ -131,7 +131,6 @@ class Track {
     float y2 = car.y + car.edges[1].y;
     float y3 = car.y - car.edges[0].y;    
     float y4 = car.y - car.edges[1].y;
-    int pointLen = outerPoints.length;
     
     // check if touching finishLine lines
     if (lineTouch(x1,y1,x2,y2, finishLine[0].x, finishLine[0].y, finishLine[1].x, finishLine[1].y) ||
@@ -232,26 +231,6 @@ class Track {
   
 }
 
-
-// JOINING POINTS WITHOUT BEGINSHAPE()
-//for (int i=0; i < points.length; i++) {
-//  int start = i;
-//  int second = start+1; 
-//  if (second>=points.length) { 
-//    second=0;
-//  }
-//  int third = second+1;
-//  if (third>=points.length) { 
-//    third = 0;
-//  }
-//  int fourth = third+1;
-//  if (fourth>=points.length) { 
-//    fourth = 0;
-//  }
-//  curve(points[start].x, points[start].y, points[second].x, points[second].y, 
-//    points[third].x, points[third].y, points[fourth].x, points[fourth].y);
-//} 
-
 // OLD POINTS (BRANDS HATCH)
 //    points[ 0 ] = start;
 //    points[ 1 ] = new PVector( 456 , 653 );
@@ -273,15 +252,4 @@ class Track {
 //    points[ 17 ] = new PVector( 1111 , 353 );
 //    points[ 18 ] = new PVector( 1021 , 460 );
 //    points[ 19 ] = new PVector( 848 , 541 );
-
-// OLD METHOD TO GET CAR EDGES
-//float x1 = car.x - (car.wid/2 * cos(-car.angle)) - (car.hei/2 * sin(-car.angle));
-//float x2 = car.x - (car.hei/2 * cos(-car.angle-PI/2)) - (car.wid/2 * sin(-car.angle-PI/2));
-//float x3 = car.x + (car.hei/2 * cos(-car.angle-PI/2)) + (car.wid/2 * sin(-car.angle-PI/2));
-//float x4 = car.x + (car.wid/2 * cos(-car.angle)) + (car.hei/2 * sin(-car.angle));
-//float y1 = car.y - (car.hei/2 * cos(car.angle)) - (car.wid/2 * sin(car.angle));
-//float y2 = car.y - (car.wid/2 * cos(car.angle+PI/2)) - (car.hei/2 * sin(car.angle+PI/2));
-//float y3 = car.y + (car.wid/2 * cos(car.angle+PI/2)) + (car.hei/2 * sin(car.angle+PI/2));
-//float y4 = car.y + (car.hei/2 * cos(car.angle)) + (car.wid/2 * sin(car.angle));
-
     

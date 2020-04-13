@@ -10,7 +10,7 @@ Population pop;
 Car humanCar;
 HUD hud = new HUD();
 float globalMutationRate = 0.15;  // 0.1
-boolean humanPlaying = false;
+boolean humanPlaying = true;
 boolean showBest = false;
 boolean saveBest = false;
 boolean runBest = false;
@@ -19,12 +19,13 @@ int lap = 1;
 float bestFitness = 0;
 int bestCarLap = 1;
 int speed = 60;
+int alive;
 
 void setup() {
   size(1200, 800);  // 1200, 800
   
   if (humanPlaying) humanCar = new Car();
-  else pop = new Population(250);  // 200, 500
+  else pop = new Population(300);  // 200, 500
   //smooth();
   //track.makePoints();
   //track.drawPoints();
@@ -34,10 +35,10 @@ void draw() {
   if (!paused) {
     background(0, 130, 0);
     track.draw();
-
+    
     if (humanPlaying) {
       if (humanCar.alive) {
-        hud.draw(humanCar.lap,humanCar.time, humanCar.lapTime, humanCar.bestTime);  // !!
+        hud.draw(humanCar.lap,humanCar.time, humanCar.lapTime, humanCar.bestTime);
         if (heldKeys[0]) humanCar.accelerate(); 
         if (heldKeys[1]) humanCar.brake();
         if (heldKeys[2]) humanCar.turnLeft();
@@ -59,9 +60,10 @@ void draw() {
         pop.bestCar = pop.bestCar.clone();
       }
     } else {  // if just evolving normally
+      alive = 0;
       if (!pop.done()) {  //if any players are alive then update them
         //println("***********************************");
-        hud.draw("Best Lap: "+str(bestCarLap), "Gen: "+str(pop.gen), "Prev Fitness: "+str(bestFitness), "Alive: ");
+        hud.draw("Gen: "+str(pop.gen), "Alive: "+str(alive), "Best Lap: "+str(bestCarLap),  "Prev Fitness: "+str(bestFitness));
         pop.updateAlive();
       } else {  //all dead, do genetic algorithm shit
         pop.calculateFitness(); 
@@ -86,7 +88,7 @@ void keyPressed() {
     if (keyCode == LEFT) heldKeys[2] = true;
     if (keyCode == RIGHT) heldKeys[3] = true;
   }
-  println("speed: "+speed, " showBest: "+showBest, " MR: "+globalMutationRate);
+  if (!humanPlaying) println("speed: "+speed, " showBest: "+showBest, " MR: "+globalMutationRate);
 }
 
 void keyReleased() {
@@ -97,7 +99,6 @@ void keyReleased() {
     if (keyCode == RIGHT) heldKeys[3] = false;
   }
 }
-
 
 
 

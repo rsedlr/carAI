@@ -5,7 +5,7 @@ class Car {
   float x, y;
   float drag = 0.04;  //0.04
   float speed;
-  float maxSpeed = 7 + drag;  // 5 for human
+  float maxSpeed = 8 + drag;  // 5 for human
   float acceleration = 1;  // 0.15
   float angle;
   int lap = 1;
@@ -16,7 +16,7 @@ class Car {
   boolean alive = true;
   boolean onFinishLine = true;
   boolean preFinLine = false;
-  int cpLen = 29;  // number of checkpoints
+  int cpLen = track.pointLen;  // number of checkpoints
   boolean[] cp = new boolean[cpLen];
   
   PVector[] edges = {new PVector(wid/2, hei/2),
@@ -106,7 +106,7 @@ class Car {
   } 
   
   float rotateAmount() {
-    return 1/(speed*8+10);
+    return 1/(speed*6+10);
   }
   
   void rotateVectors(float angle) {

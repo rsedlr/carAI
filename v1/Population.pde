@@ -53,13 +53,23 @@ class Population {
     //println(bestCarNo);
   }
   
+  //boolean done() {  // old way of doing it, more efficient but doesnt give alive count
+  //  for (int i=0; i < cars.length; i++) {
+  //    if (cars[i].alive) {
+  //      return false; 
+  //    }
+  //  }
+  //  return true;
+  //}
+  
   boolean done() {  // returns true if all players are dead
     for (int i=0; i < cars.length; i++) {
       if (cars[i].alive) {
-        return false; 
+        alive += 1; 
       }
     }
-    return true;
+    if (alive > 0) return false;
+    else return true;
   }
   
   void naturalSelection() {
