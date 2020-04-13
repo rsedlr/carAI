@@ -12,16 +12,15 @@ class Track {
     if (type == "" || type == "default") {
       outerPoints = new PVector[34];
       innerPoints = new PVector[34];
-      setPoints(type, innerPoints, outerPoints, finishLine, preFinLine);  // start, startAngle
       start = new PVector(830, 107);
       startAngle = -PI/2;
-    } else if (type == "brands") {
-      outerPoints = new PVector[34];
-      innerPoints = new PVector[34];
-      setPoints(type, innerPoints, outerPoints, finishLine, preFinLine);  // start, startAngle
+    } else if (type == "new") {
+      outerPoints = new PVector[30];
+      innerPoints = new PVector[30];
       start = new PVector(830, 107);
       startAngle = 0;
     }
+    setPoints(type, innerPoints, outerPoints, finishLine, preFinLine);
     
     pointLen = outerPoints.length;
   }
@@ -30,11 +29,11 @@ class Track {
     stroke(0);
     fill(50);    
     strokeWeight(5);    
-    beginShape();
-      for (int i=0; i < pointLen; i++) {
-        vertex(outerPoints[i].x, outerPoints[i].y);
-      }
-    endShape(CLOSE);  // CLOSE 
+    //beginShape();
+    //  for (int i=0; i < pointLen; i++) {
+    //    vertex(outerPoints[i].x, outerPoints[i].y);
+    //  }
+    //endShape(CLOSE);  // CLOSE 
     
     fill(0,130,0);
     beginShape();
@@ -44,26 +43,26 @@ class Track {
     endShape(CLOSE);  // CLOSE
     
     stroke(255);
-    line(finishLine[0].x, finishLine[0].y, finishLine[1].x, finishLine[1].y);
+    //line(finishLine[0].x, finishLine[0].y, finishLine[1].x, finishLine[1].y);
     //line(preFinLine[0].x, preFinLine[0].y, preFinLine[1].x, preFinLine[1].y);
     
     //stroke(0,0,255);  // checkpoints
     //for (int i=0; i < innerPoints.length; i++) {  
     //  line(innerPoints[i].x, innerPoints[i].y, outerPoints[i].x, outerPoints[i].y); 
     //}
-    //textSize(15);
-    //fill(255);
-    //stroke(255,0,0);
-    //strokeWeight(10);
+    textSize(15);
+    fill(255);
+    stroke(255,0,0);
+    strokeWeight(10);
     //for (int i=0; i < outerPoints.length; i++) {
     //  point(outerPoints[i].x, outerPoints[i].y);
     //  text(i, outerPoints[i].x, outerPoints[i].y); 
     //}
-    //stroke(0,255,0);
-    //for (int i=0; i < innerPoints.length; i++) {
-    //  point(innerPoints[i].x, innerPoints[i].y);
-    //  text(i, innerPoints[i].x, innerPoints[i].y); 
-    //}
+    stroke(0,255,0);
+    for (int i=0; i < innerPoints.length; i++) {
+      point(innerPoints[i].x, innerPoints[i].y);
+      text(i, innerPoints[i].x, innerPoints[i].y); 
+    }
     
   } 
   
@@ -173,33 +172,3 @@ class Track {
   }
   
 }
-
-
-
-//    preFinLine[0] = new PVector(720, 680);
-//    preFinLine[1] = new PVector(720, 770);
-//    finishLine[0] = new PVector(800, 63);
-//    finishLine[1] = new PVector(800, 151);
-//    start = new PVector(830, 107);
-//    startAngle = 0;
-    
-//    innerPoints[0] = new PVector(456, 653);
-//    innerPoints[1] = new PVector(456, 653);
-//    innerPoints[2] = new PVector(310, 679);
-//    innerPoints[3] = new PVector(164, 629);
-//    innerPoints[4] = new PVector(95, 517);
-//    innerPoints[5] = new PVector(113, 323);
-//    innerPoints[6] = new PVector(183, 145);
-//    innerPoints[7] = new PVector(255, 109);
-//    innerPoints[8] = new PVector(297, 169);
-//    innerPoints[9] = new PVector(264, 344);
-//    innerPoints[10] = new PVector(290, 467);
-//    innerPoints[11] = new PVector(431, 497);
-//    innerPoints[12] = new PVector(636, 457);
-//    innerPoints[13] = new PVector(816, 384);
-//    innerPoints[14] = new PVector(889, 200);
-//    innerPoints[15] = new PVector(986, 140);
-//    innerPoints[16] = new PVector(1102, 212);
-//    innerPoints[17] = new PVector(1111, 353);
-//    innerPoints[18] = new PVector(1021, 460);
-//    innerPoints[19] = new PVector(848, 541);
