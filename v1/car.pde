@@ -30,8 +30,8 @@ class Car {
                        new PVector(200, 0),  // right
                        new PVector(-200, 0),  // left
                        new PVector(200, 200),  // back right
-                       new PVector(-200, 200),  // back left
-                       new PVector(0, 1000)};  // bac
+                       new PVector(-200, 200)};  // back left
+                       //new PVector(0, 1000)  // back
   // AI stuffs
   NeuralNet brain;
   float fitness = 0;
@@ -45,7 +45,7 @@ class Car {
     y = track.start.y;
     angle = track.startAngle;
     rotateVectors(angle);
-    brain = new NeuralNet(distances.length, 16, 4);  // 16
+    brain = new NeuralNet(sensors.length, 16, 4);  // 16
   }
 
   public void draw() {
