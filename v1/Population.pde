@@ -49,7 +49,6 @@ class Population {
     if (saveBest) {
       saveGen(cars.length/3);
       //saveGen(3);  // saves best 3 cars
-      //bestCar.saveCar(bestCarNo[0], pop.gen); 
       saveBest = false;
     }
     //println(bestCarNo);

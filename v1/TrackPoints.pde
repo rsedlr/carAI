@@ -1,10 +1,10 @@
 
 public void setPoints(String type, PVector[] innerPoints, PVector[] outerPoints, PVector[] finishLine, PVector[] preFinLine) {  // PVector start, float startAngle
   if (type == "" || type == "default") {
-    preFinLine[0] = new PVector(720, 680);
-    preFinLine[1] = new PVector(720, 770);
-    finishLine[0] = new PVector(800, 63);
-    finishLine[1] = new PVector(800, 151);
+    finishLine[0] = new PVector(600, 680);  
+    finishLine[1] = new PVector(600, 770);
+    preFinLine[0] = new PVector(800, 63);
+    preFinLine[1] = new PVector(800, 151);
     
     outerPoints[0] = new PVector(493, 770);
     outerPoints[1] = new PVector(235, 770);
