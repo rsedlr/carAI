@@ -77,18 +77,23 @@ class Population {
     newCars[0] = cars[bestCarNo[0]].clone();  // top 3 survive to next
     newCars[1] = cars[bestCarNo[1]].clone();
     newCars[2] = cars[bestCarNo[2]].clone();
-    newCars[3] = cars[bestCarNo[0]].crossover(cars[bestCarNo[1]]);  // they also get crossed
-    newCars[4] = cars[bestCarNo[0]].crossover(cars[bestCarNo[2]]);
-    newCars[5] = cars[bestCarNo[1]].crossover(cars[bestCarNo[2]]);
     
-    newCars[6] = cars[bestCarNo[0]].crossover(cars[bestCarNo[1]]);  // and crossed + mutated
-    newCars[7] = cars[bestCarNo[0]].crossover(cars[bestCarNo[1]]);
-    newCars[8] = cars[bestCarNo[0]].crossover(cars[bestCarNo[1]]);
-    newCars[6].mutate();
-    newCars[7].mutate();
-    newCars[8].mutate();
+    newCars[3] = cars[bestCarNo[0]].clone();  // and mutate
+    newCars[4] = cars[bestCarNo[1]].clone();
+    newCars[5] = cars[bestCarNo[2]].clone();
+    newCars[3].mutate();
+    newCars[4].mutate();
+    newCars[5].mutate();
+    //newCars[3] = cars[bestCarNo[0]].crossover(cars[bestCarNo[1]]);  // they also get crossed
+    //newCars[4] = cars[bestCarNo[0]].crossover(cars[bestCarNo[2]]);
+    //newCars[5] = cars[bestCarNo[1]].crossover(cars[bestCarNo[2]]);
     
-    for (int i=9; i < cars.length; i++) {
+    //newCars[6] = cars[bestCarNo[0]].crossover(cars[bestCarNo[1]]);  // and crossed + mutated
+    //newCars[7] = cars[bestCarNo[0]].crossover(cars[bestCarNo[1]]);
+    //newCars[8] = cars[bestCarNo[0]].crossover(cars[bestCarNo[1]]);
+
+    
+    for (int i=6; i < cars.length; i++) {
       if (i < cars.length/3) {  // length/2
         newCars[i] = selectCar().clone();
       } else {
