@@ -15,8 +15,8 @@ class Track {
       start = new PVector(830, 107);
       startAngle = -PI/2;
     } else if (type == "new") {
-      outerPoints = new PVector[43];
-      innerPoints = new PVector[41];
+      outerPoints = new PVector[44];
+      innerPoints = new PVector[44];
       start = new PVector(830, 107);
       startAngle = 0;
     }
