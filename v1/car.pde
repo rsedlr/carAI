@@ -55,7 +55,6 @@ class Car {
     strokeWeight(0);
     translate(x, y);
     rotate(angle);
-    rectMode(CENTER);
     rect(0, 0, wid, hei);  // (0, -10)
     fill (255);
     stroke(255);
@@ -187,8 +186,12 @@ class Car {
     //return fitness;
   }
   
-  void mutate() {
-    brain.mutate(globalMutationRate); 
+  void mutate(boolean force) {
+    if (force) {
+      brain.mutate(1);
+    } else {
+      brain.mutate(globalMutationRate);
+    }
   }
   
   Car clone() {  // clone()

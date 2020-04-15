@@ -81,9 +81,9 @@ class Population {
     newCars[3] = cars[bestCarNo[0]].clone();  // and mutate
     newCars[4] = cars[bestCarNo[1]].clone();
     newCars[5] = cars[bestCarNo[2]].clone();
-    newCars[3].mutate();
-    newCars[4].mutate();
-    newCars[5].mutate();
+    newCars[3].mutate(true);
+    newCars[4].mutate(true);
+    newCars[5].mutate(true);
     //newCars[3] = cars[bestCarNo[0]].crossover(cars[bestCarNo[1]]);  // they also get crossed
     //newCars[4] = cars[bestCarNo[0]].crossover(cars[bestCarNo[2]]);
     //newCars[5] = cars[bestCarNo[1]].crossover(cars[bestCarNo[2]]);
@@ -99,7 +99,7 @@ class Population {
       } else {
         newCars[i] = selectCar().crossover(selectCar());
       }
-      newCars[i].mutate();
+      newCars[i].mutate(false);
     }
     cars = newCars.clone();
     gen++;
@@ -124,7 +124,7 @@ class Population {
   
   void mutate() {
     for (int i=0; i < cars.length; i++) {
-      cars[i].mutate();
+      cars[i].mutate(false);
     }
   }
   

@@ -23,7 +23,7 @@ int alive;
 
 void setup() {
   size(1200, 800);  // 1200, 800
-  
+  rectMode(CENTER);
   if (humanPlaying) humanCar = new Car();
   else pop = new Population(300);  // 200, 500
   //smooth();
