@@ -78,10 +78,10 @@ public void setPoints(String type, PVector[] innerPoints, PVector[] outerPoints,
   } else if (type == "new") {
     preFinLine[0] = new PVector(720, 680);
     preFinLine[1] = new PVector(720, 770);
-    finishLine[0] = new PVector(800, 63);
-    finishLine[1] = new PVector(800, 151);
+    finishLine[0] = new PVector(895, 780);
+    finishLine[1] = new PVector(895, 700);
     
-    outerPoints[0] = new PVector(753, 780);
+    outerPoints[0] = new PVector(650, 780);
     outerPoints[1] = new PVector(1088, 780);
     outerPoints[2] = new PVector(1180, 730);
     outerPoints[3] = new PVector(1180, 625);
@@ -104,29 +104,34 @@ public void setPoints(String type, PVector[] innerPoints, PVector[] outerPoints,
     outerPoints[20] = new PVector(580, 302);
     outerPoints[21] = new PVector(546, 298);
     outerPoints[22] = new PVector(537, 277);
-    outerPoints[23] = new PVector(588, 163);
-    outerPoints[24] = new PVector(579, 94);
-    outerPoints[25] = new PVector(500, 64);
+    outerPoints[23] = new PVector(574, 180);
+    outerPoints[24] = new PVector(556, 107);
+    outerPoints[25] = new PVector(474, 67);
     outerPoints[26] = new PVector(90, 67);
     outerPoints[27] = new PVector(37, 101);
-    outerPoints[28] = new PVector(16, 194);
-    outerPoints[29] = new PVector(81, 246);
-    outerPoints[30] = new PVector(247, 259);
-    outerPoints[31] = new PVector(50, 403);
-    outerPoints[32] = new PVector(19, 471);
-    outerPoints[33] = new PVector(74, 563);
-    outerPoints[34] = new PVector(375, 568);
-    outerPoints[35] = new PVector(375, 571);
-    outerPoints[36] = new PVector(125, 583);
-    outerPoints[37] = new PVector(48, 607);
-    outerPoints[38] = new PVector(21, 696);
-    outerPoints[39] = new PVector(79, 771);
-    outerPoints[40] = new PVector(442, 773);
-    outerPoints[41] = new PVector(532, 717);
-    outerPoints[42] = new PVector(551, 716);
-    outerPoints[43] = new PVector(650, 780);    
+    outerPoints[28] = new PVector(32, 194);
+    outerPoints[29] = new PVector(81, 250);
+    outerPoints[30] = new PVector(262, 271);
+    outerPoints[31] = new PVector(268, 284);
+    outerPoints[32] = new PVector(259, 298);
+    outerPoints[33] = new PVector(239, 308);
+    outerPoints[34] = new PVector(85, 338);
+    outerPoints[35] = new PVector(38, 381);
+    outerPoints[36] = new PVector(38, 444);
+    outerPoints[37] = new PVector(91, 496);
+    outerPoints[38] = new PVector(376, 543);
+    outerPoints[39] = new PVector(376, 543);
+    outerPoints[40] = new PVector(376, 543);
+    outerPoints[41] = new PVector(376, 543);
+    outerPoints[42] = new PVector(125, 583);
+    outerPoints[43] = new PVector(48, 607);
+    outerPoints[44] = new PVector(21, 696);
+    outerPoints[45] = new PVector(79, 771);
+    outerPoints[46] = new PVector(442, 773);
+    outerPoints[47] = new PVector(532, 690);
+    outerPoints[48] = new PVector(551, 690);
     
-    innerPoints[0] = new PVector(747, 700);
+    innerPoints[0] = new PVector(666, 700);
     innerPoints[1] = new PVector(1040, 700);
     innerPoints[2] = new PVector(1065, 685);
     innerPoints[3] = new PVector(1065, 665);
@@ -147,31 +152,36 @@ public void setPoints(String type, PVector[] innerPoints, PVector[] outerPoints,
     innerPoints[18] = new PVector(733, 328);
     innerPoints[19] = new PVector(637, 385);
     innerPoints[20] = new PVector(526, 395);
-    innerPoints[21] = new PVector(439, 358);
-    innerPoints[22] = new PVector(414, 289);
-    innerPoints[23] = new PVector(463, 185);
-    innerPoints[24] = new PVector(459, 149);
-    innerPoints[25] = new PVector(421, 134);
-    innerPoints[26] = new PVector(121, 137);
-    innerPoints[27] = new PVector(115, 146);
-    innerPoints[28] = new PVector(117, 172);
-    innerPoints[29] = new PVector(137, 185);
-    innerPoints[30] = new PVector(368, 230);
-    innerPoints[31] = new PVector(184, 403);
-    innerPoints[32] = new PVector(118, 464);
-    innerPoints[33] = new PVector(142, 493);
-    innerPoints[34] = new PVector(403, 486);
-    innerPoints[35] = new PVector(485, 544);
-    innerPoints[36] = new PVector(437, 621);
-    innerPoints[37] = new PVector(183, 636);
-    innerPoints[38] = new PVector(144, 653);
-    innerPoints[39] = new PVector(168, 694);
-    innerPoints[40] = new PVector(423, 698);
-    innerPoints[41] = new PVector(518, 621);
-    innerPoints[42] = new PVector(565, 616);
-    innerPoints[43] = new PVector(666, 690);
-    
-  }
+    innerPoints[21] = new PVector(446, 354);
+    innerPoints[22] = new PVector(431, 289);
+    innerPoints[23] = new PVector(470, 188);
+    innerPoints[24] = new PVector(462, 167);
+    innerPoints[25] = new PVector(437, 154);
+    innerPoints[26] = new PVector(149, 154);
+    innerPoints[27] = new PVector(136, 161);
+    innerPoints[28] = new PVector(137, 169);
+    innerPoints[29] = new PVector(155, 174);
+    innerPoints[30] = new PVector(327, 191);
+    innerPoints[31] = new PVector(390, 222);
+    innerPoints[32] = new PVector(401, 294);
+    innerPoints[33] = new PVector(357, 354);
+    innerPoints[34] = new PVector(183, 404);
+    innerPoints[35] = new PVector(165, 413);
+    innerPoints[36] = new PVector(168, 426);
+    innerPoints[37] = new PVector(193, 431);
+    innerPoints[38] = new PVector(406, 465);
+    innerPoints[39] = new PVector(481, 493);
+    innerPoints[40] = new PVector(485, 544);
+    innerPoints[41] = new PVector(437, 621);
+    innerPoints[42] = new PVector(188, 663);
+    innerPoints[43] = new PVector(175, 672);
+    innerPoints[44] = new PVector(181, 680);
+    innerPoints[45] = new PVector(193, 685);
+    innerPoints[46] = new PVector(423, 685);
+    innerPoints[47] = new PVector(514, 592);
+    innerPoints[48] = new PVector(568, 594);
+
+}
 
 }
 

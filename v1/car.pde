@@ -96,8 +96,8 @@ class Car {
     }
   }
   void brake() {
-    if (speed > 0.05) {
-      speed -= 0.05;
+    if (speed > 0.07) {
+      speed -= 0.07;
     }
     else {
       speed = 0; 
