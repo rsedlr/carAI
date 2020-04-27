@@ -52,19 +52,19 @@ class Track {
     //  line(innerPoints[i].x, innerPoints[i].y, outerPoints[i].x, outerPoints[i].y); 
     //}
     
-    textSize(15);
-    fill(255);
-    stroke(255,0,0);
-    strokeWeight(10);
-    for (int i=0; i < pointLen; i++) {
-      point(outerPoints[i].x, outerPoints[i].y);
-      text(i, outerPoints[i].x, outerPoints[i].y); 
-    }
-    stroke(0,255,0);
-    for (int i=0; i < innerPoints.length; i++) {
-      point(innerPoints[i].x, innerPoints[i].y);
-      text(i, innerPoints[i].x, innerPoints[i].y); 
-    }
+    //textSize(15);
+    //fill(255);
+    //stroke(255,0,0);
+    //strokeWeight(10);
+    //for (int i=0; i < pointLen; i++) {
+    //  point(outerPoints[i].x, outerPoints[i].y);
+    //  text(i, outerPoints[i].x, outerPoints[i].y); 
+    //}
+    //stroke(0,255,0);
+    //for (int i=0; i < innerPoints.length; i++) {
+    //  point(innerPoints[i].x, innerPoints[i].y);
+    //  text(i, innerPoints[i].x, innerPoints[i].y); 
+    //}
     
   } 
   
@@ -111,11 +111,11 @@ class Track {
   }
   
   public float[] carSensors(Car car) {
-    float dist1;
-    float dist2;
+    float[] dist = new float[2];
     int pointLen = outerPoints.length;
     float[] distances = new float[car.sensors.length]; 
     for (int j=0; j < car.sensors.length; j++) {
+      distances[j] = 999;
       for (int i=0; i < pointLen; i++) {
         int s = i+1;
         if (s == pointLen) s = 0;
@@ -126,27 +126,10 @@ class Track {
         //text(j, car.x+car.sensors[j].x, car.y+car.sensors[j].y);
         //strokeWeight(10);
         //stroke(255,0,0);
-        dist1 = lineDistance(car.x, car.y, car.x+car.sensors[j].x, car.y+car.sensors[j].y, outerPoints[i].x, outerPoints[i].y, outerPoints[s].x, outerPoints[s].y);
-        dist2 = lineDistance(car.x, car.y, car.x+car.sensors[j].x, car.y+car.sensors[j].y, innerPoints[i].x, innerPoints[i].y, innerPoints[s].x, innerPoints[s].y);
-        
-        if (dist1 != 0 && dist2 != 0) {  // maybe clean this up if possible
-          if (dist1 < dist2) {
-            if (dist1 < distances[j] || distances[j] == 0) {
-              distances[j] = dist1;
-            }
-          } else {
-            if (dist2 < distances[j] || distances[j] == 0) {
-              distances[j] = dist2;
-            }
-          }
-        } else if (dist1 != 0) {
-          if (dist1 < distances[j] || distances[j] == 0) {
-            distances[j] = dist1;
-          }
-        } else if (dist2 != 0) {
-          if (dist2 < distances[j] || distances[j] == 0) {
-            distances[j] = dist2;
-          }
+        dist[0] = lineDistance(car.x, car.y, car.x+car.sensors[j].x, car.y+car.sensors[j].y, outerPoints[i].x, outerPoints[i].y, outerPoints[s].x, outerPoints[s].y);
+        dist[1] = lineDistance(car.x, car.y, car.x+car.sensors[j].x, car.y+car.sensors[j].y, innerPoints[i].x, innerPoints[i].y, innerPoints[s].x, innerPoints[s].y);
+        for (int a=0; a < dist.length; a++) {
+          if (dist[a] < distances[j] && dist[a] != 0) distances[j] = dist[a];
         }
       }
     }
@@ -165,9 +148,9 @@ class Track {
     float uA = ((x4-x3)*(y1-y3) - (y4-y3)*(x1-x3)) / ((y4-y3)*(x2-x1) - (x4-x3)*(y2-y1));
     float uB = ((x2-x1)*(y1-y3) - (y2-y1)*(x1-x3)) / ((y4-y3)*(x2-x1) - (x4-x3)*(y2-y1));
     if (uA >= 0 && uA <= 1 && uB >= 0 && uB <= 1) {
-      //float intersectionX = x1 + (uA * (x2-x1));
-      //float intersectionY = y1 + (uA * (y2-y1));
-      //point(intersectionX, intersectionY);
+      float intersectionX = x1 + (uA * (x2-x1));
+      float intersectionY = y1 + (uA * (y2-y1));
+      point(intersectionX, intersectionY);
       return sqrt(sq((uA * (x2-x1))) + sq((uA * (y2-y1))));  // return distance
     }
     return 0;

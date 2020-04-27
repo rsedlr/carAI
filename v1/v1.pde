@@ -1,7 +1,5 @@
 // TODO: ADD A WAY TO TRAIN OFF OF A SAVED NN, 
-//        SO THAT WE CAN SAVE THE DUDE WHO DOES A LAP 
-//        AND THEN RUN IT TO KEEP IMPROVING ON THE LAP TIME OVER AND OVER
-// DISPLAY LAP TIMES
+//       DISPLAY AI LAP TIMES
 
 
 boolean[] heldKeys = {false, false, false, false};  // up, down, left, right
@@ -10,7 +8,7 @@ Population pop;
 Car humanCar;
 HUD hud = new HUD();
 float globalMutationRate = 0.15;  // 0.1
-boolean humanPlaying = true;
+boolean humanPlaying = false;
 boolean showBest = false;
 boolean saveBest = false;
 boolean runBest = false;
@@ -22,6 +20,7 @@ int speed = 60;
 int alive;
 
 void setup() {
+  frameRate(speed);
   size(1200, 800);  // 1200, 800
   rectMode(CENTER);
   if (humanPlaying) humanCar = new Car();

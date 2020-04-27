@@ -3,7 +3,7 @@ class Car {
   float wid = 16;
   float hei = 26;
   float x, y;
-  float drag = 0.04;  //0.04
+  float drag = 0.05;  //0.04
   float speed;
   float maxSpeed = 8 + drag;  // 5 for human
   float acceleration = 1;  // 0.15
@@ -21,7 +21,8 @@ class Car {
   
   PVector[] edges = {new PVector(wid/2, hei/2),
                      new PVector(wid/2, -hei/2)};
-                     
+  
+  // AI stuffs
   PVector[] sensors = {new PVector(0, -1000),  // forward 
                        new PVector(130, -450),  // forward right 1
                        new PVector(-130, -450),  // forward left 1                    
@@ -31,8 +32,6 @@ class Car {
                        new PVector(-200, 0),  // left
                        new PVector(200, 200),  // back right
                        new PVector(-200, 200)};  // back left
-                       //new PVector(0, 1000)  // back
-  // AI stuffs
   NeuralNet brain;
   float fitness = 0;
   boolean replay = false;  // whether the player is being replayed                
