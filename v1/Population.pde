@@ -19,9 +19,7 @@ class Population {
         cars[i].look();
         cars[i].think();
         cars[i].move();
-        if (!showBest || i == 0) {  // only draw alive ones
-          cars[i].draw(); 
-        }
+        if (!showBest || i == 0) cars[i].draw();
       }
     }
   }
@@ -33,17 +31,17 @@ class Population {
     bestCarNo[2] = bestCarNo[0];
     //println("****************");
     for (int i=0; i < cars.length; i++) {
-       if (cars[i].fitness > cars[bestCarNo[0]].fitness) {
-         bestFitness = cars[i].fitness;
-         bestCarNo[2] = bestCarNo[1];
-         bestCarNo[1] = bestCarNo[0];
-         bestCarNo[0] = i;
-       } else if (cars[i].fitness > cars[bestCarNo[1]].fitness) {
-         bestCarNo[2] = bestCarNo[1];
-         bestCarNo[1] = i;
-       } else if (cars[i].fitness > cars[bestCarNo[2]].fitness) {
-         bestCarNo[2] = i;
-       }
+      if (cars[i].fitness > cars[bestCarNo[0]].fitness) {
+        bestFitness = cars[i].fitness;
+        bestCarNo[2] = bestCarNo[1];
+        bestCarNo[1] = bestCarNo[0];
+        bestCarNo[0] = i;
+      } else if (cars[i].fitness > cars[bestCarNo[1]].fitness) {
+        bestCarNo[2] = bestCarNo[1];
+        bestCarNo[1] = i;
+      } else if (cars[i].fitness > cars[bestCarNo[2]].fitness) {
+        bestCarNo[2] = i;
+      }
     }
     bestCar = cars[bestCarNo[0]].clone();
     if (saveBest) {
@@ -63,9 +61,7 @@ class Population {
   boolean done() {  // returns true if all players are dead
     alive = 0;
     for (int i=0; i < cars.length; i++) {
-      if (cars[i].alive) {
-        alive += 1;  // return false
-      }
+      if (cars[i].alive) alive ++;
     }
     if (alive > 0) return false;
     return true;

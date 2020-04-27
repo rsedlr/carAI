@@ -181,7 +181,7 @@ class Car {
     for (int i=0; i < cpLen; i++) {
       if (cp[i]) fitness++;
     }
-    fitness *= fitness;
+    //fitness *= fitness;
     //return fitness;
   }
   
@@ -206,7 +206,7 @@ class Car {
   } 
   
   void saveCar(int carNo, int gen) {  //save the players top score and its population id 
-    saveTable(brain.NetToTable(), "data/car" + carNo + "-gen"+ gen + "-fit" + bestFitness + ".csv");  // normal fitness wasnt working
+    saveTable(brain.NetToTable(), "data/car" + carNo + "-gen"+ gen + "-fit" + bestFitness + "^2.csv");  // normal fitness wasnt working
   }
   
   Car loadCar(int carNo) {
