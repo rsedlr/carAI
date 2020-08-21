@@ -45,6 +45,7 @@ class Car {
     angle = track.startAngle;
     rotateVectors(angle);
     brain = new NeuralNet(sensors.length, 16, 4);  // 16
+    time = time = millis();
   }
 
   public void draw() {
@@ -55,11 +56,11 @@ class Car {
     translate(x, y);
     rotate(angle);
     rect(0, 0, wid, hei);  // (0, -10)
-    fill (255);
+    fill(255);
     stroke(255);
     rect(2, 0, 3, hei);  // go faster stripes
     rect(-2, 0, 3, hei);
-    fill (0);
+    fill(0);
     stroke(0);
     rect(0, -3, 12, 4);  // windscreen
     rect(5, 0, 2, 10);  // right side window
@@ -83,7 +84,6 @@ class Car {
     y -= speed * cos(-angle);
     if (!track.onTrack(this) || (speed == 0 && !humanPlaying))  kill();  // check if car is off track, if so kill the mofo
   }
-
 
 
   void accelerate() {

@@ -12,6 +12,7 @@ class HUD {
   float x3 = 700;
   
   public void draw(int lap, float time, float prevTime, float bestTime) {  // draw method for human player
+    println(time);
     fill(0); 
     textSize(32);
     text("Time: " + str((millis()-time)/1000), timePos, yOffset);

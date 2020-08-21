@@ -181,8 +181,7 @@ public void setPoints(String type, PVector[] innerPoints, PVector[] outerPoints,
     innerPoints[47] = new PVector(514, 592);
     innerPoints[48] = new PVector(568, 594);
 
-}
-
+  }
 }
 
     //innerPoints[0] = new PVector(456, 653);

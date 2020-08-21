@@ -38,7 +38,7 @@ class Track {
     
     fill(0,130,0);
     beginShape();
-      for (int i=0; i < innerPoints.length; i++) {  // pointLen
+      for (int i=0; i < pointLen; i++) {  // pointLen
         vertex(innerPoints[i].x, innerPoints[i].y);
       }
     endShape(CLOSE);  // CLOSE

@@ -3,16 +3,18 @@
 
 
 boolean[] heldKeys = {false, false, false, false};  // up, down, left, right
-Track track = new Track("new");
+Track track = new Track("");
 Population pop;
 Car humanCar;
 HUD hud = new HUD();
 float globalMutationRate = 0.15;  // 0.1
-boolean humanPlaying = false;
+boolean humanPlaying = true;
 boolean showBest = false;
 boolean saveBest = false;
 boolean runBest = false;
 boolean paused = false;
+int pausedTime = 0;
+boolean justPaused = true;
 int lap = 1;
 float bestFitness = 0;
 int bestCarLap = 1;
@@ -39,6 +41,10 @@ void draw() {
     //line(0, 63, 1200, 63);
     if (humanPlaying) {
       if (humanCar.alive) {
+        if (!justPaused) {
+          humanCar.time += millis() - pausedTime;
+          justPaused = true;
+        }
         hud.draw(humanCar.lap,humanCar.time, humanCar.lapTime, humanCar.bestTime);
         if (heldKeys[0]) humanCar.accelerate(); 
         if (heldKeys[1]) humanCar.brake();
@@ -69,6 +75,11 @@ void draw() {
         pop.calculateFitness(); 
         pop.naturalSelection();
       }
+    }
+  } else {
+    if (justPaused) {
+      pausedTime = millis();
+      justPaused = false;
     }
   }
 }
