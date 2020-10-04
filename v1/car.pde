@@ -45,7 +45,7 @@ class Car {
     angle = track.startAngle;
     rotateVectors(angle);
     brain = new NeuralNet(sensors.length, 16, 4);  // 16
-    time = time = millis();
+    time = millis();
   }
 
   public void draw() {

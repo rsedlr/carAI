@@ -3,7 +3,7 @@
 
 
 boolean[] heldKeys = {false, false, false, false};  // up, down, left, right
-Track track = new Track("");
+Track track = new Track("new");
 Population pop;
 Car humanCar;
 HUD hud = new HUD();
