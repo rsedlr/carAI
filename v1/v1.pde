@@ -3,16 +3,16 @@
 
 
 boolean[] heldKeys = {false, false, false, false};  // up, down, left, right
-Track track = new Track("new");
+Track track = new Track("");
 Population pop;
 Car humanCar;
 HUD hud = new HUD();
 float globalMutationRate = 0.15;  // 0.1
-boolean humanPlaying = true;
+boolean humanPlaying = false;
 boolean showBest = false;
 boolean saveBest = false;
 boolean runBest = false;
-boolean paused = false;
+boolean paused = true;
 int pausedTime = 0;
 boolean justPaused = true;
 int lap = 1;

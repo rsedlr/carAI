@@ -119,13 +119,13 @@ class Track {
       for (int i=0; i < pointLen; i++) {
         int s = i+1;
         if (s == pointLen) s = 0;
-        stroke(255);  // testing stuff
-        strokeWeight(1);
-        line(car.x, car.y, car.x+car.sensors[j].x, car.y+car.sensors[j].y);
-        fill(255, 0, 0);
-        text(j, car.x+car.sensors[j].x, car.y+car.sensors[j].y);
-        strokeWeight(10);
-        stroke(255,0,0);
+        //stroke(255);  // testing stuff
+        //strokeWeight(1);
+        //line(car.x, car.y, car.x+car.sensors[j].x, car.y+car.sensors[j].y);
+        //fill(255, 0, 0);
+        //text(j, car.x+car.sensors[j].x, car.y+car.sensors[j].y);
+        //strokeWeight(10);
+        //stroke(255,0,0);
         dist[0] = lineDistance(car.x, car.y, car.x+car.sensors[j].x, car.y+car.sensors[j].y, outerPoints[i].x, outerPoints[i].y, outerPoints[s].x, outerPoints[s].y);
         dist[1] = lineDistance(car.x, car.y, car.x+car.sensors[j].x, car.y+car.sensors[j].y, innerPoints[i].x, innerPoints[i].y, innerPoints[s].x, innerPoints[s].y);
         for (int a=0; a < dist.length; a++) {
@@ -150,7 +150,7 @@ class Track {
     if (uA >= 0 && uA <= 1 && uB >= 0 && uB <= 1) {
       float intersectionX = x1 + (uA * (x2-x1));
       float intersectionY = y1 + (uA * (y2-y1));
-      point(intersectionX, intersectionY);
+      //point(intersectionX, intersectionY);
       return sqrt(sq((uA * (x2-x1))) + sq((uA * (y2-y1))));  // return distance
     }
     return 0;
